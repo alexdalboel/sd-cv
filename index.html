@@ -1,42 +1,334 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>CV – [SD]</title>
-  <style>
-    body {
-      font-family: system-ui, sans-serif;
-      max-width: 800px;
-      margin: 4rem auto;
-      line-height: 1.6;
-      padding: 0 1rem;
-    }
-    h1, h2 {
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 0.3rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physiotherapist CV</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #89b5af 0%, #5a9d93 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .card {
+            max-width: 900px;
+            width: 100%;
+            height: 500px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            display: flex;
+            overflow: hidden;
+            animation: fadeIn 0.6s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .left-section {
+            width: 40%;
+            background: linear-gradient(135deg, #89b5af 0%, #5a9d93 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            color: white;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-bottom: 25px;
+        }
+
+        .left-section h1 {
+            font-size: 1.8em;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .left-section p {
+            font-size: 1.1em;
+            opacity: 0.95;
+            font-weight: 300;
+            text-align: center;
+        }
+
+        .right-section {
+            width: 60%;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        .content-area {
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        .content-section {
+            display: none;
+            animation: slideIn 0.4s ease;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .intro h2 {
+            color: #5a9d93;
+            font-size: 1.6em;
+            margin-bottom: 20px;
+        }
+
+        .intro p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.05em;
+        }
+
+        .education-list, .experience-list {
+            list-style: none;
+        }
+
+        .education-list li, .experience-list li {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .education-list li:last-child, .experience-list li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .item-title {
+            color: #333;
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .item-meta {
+            color: #888;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+
+        .item-desc {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #555;
+            text-decoration: none;
+            font-size: 1.05em;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item:hover {
+            color: #5a9d93;
+        }
+
+        .contact-item svg {
+            width: 20px;
+            height: 20px;
+            fill: #5a9d93;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .nav-btn {
+            flex: 1;
+            padding: 12px 20px;
+            background: #f0f0f0;
+            border: none;
+            border-radius: 25px;
+            color: #555;
+            font-size: 0.95em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .nav-btn:hover {
+            background: #89b5af;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .nav-btn.active {
+            background: linear-gradient(135deg, #89b5af 0%, #5a9d93 100%);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                flex-direction: column;
+                height: auto;
+                max-height: 90vh;
+            }
+
+            .left-section {
+                width: 100%;
+                padding: 30px;
+            }
+
+            .right-section {
+                width: 100%;
+                padding: 30px;
+            }
+
+            .profile-img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .left-section h1 {
+                font-size: 1.5em;
+            }
+
+            .nav-buttons {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="card">
+        <div class="left-section">
+            <img src="https://via.placeholder.com/180" alt="Profile" class="profile-img">
+            <h1>Her Name</h1>
+            <p>Physiotherapist</p>
+        </div>
 
-<h1>[Hendes navn]</h1>
-<p><strong>[Titel / fagområde]</strong></p>
+        <div class="right-section">
+            <div class="content-area">
+                <div class="content-section intro active">
+                    <h2>Welcome</h2>
+                    <p>
+                        Write a brief introduction here about her passion for physiotherapy, 
+                        her approach to patient care, and what makes her practice special. 
+                        Keep it warm and professional.
+                    </p>
+                </div>
 
-<h2>Profil</h2>
-<p>Kort profiltekst her.</p>
+                <div class="content-section education">
+                    <h2>Education</h2>
+                    <ul class="education-list">
+                        <li>
+                            <div class="item-title">Bachelor of Physiotherapy</div>
+                            <div class="item-meta">University Name • Graduation Year</div>
+                        </li>
+                        <li>
+                            <div class="item-title">Specialization/Certification</div>
+                            <div class="item-meta">Institution • Year</div>
+                        </li>
+                    </ul>
+                </div>
 
-<h2>Erfaring</h2>
-<ul>
-  <li><strong>Stilling</strong> – Virksomhed (år)</li>
-</ul>
+                <div class="content-section experience">
+                    <h2>Experience</h2>
+                    <ul class="experience-list">
+                        <li>
+                            <div class="item-title">Current Position</div>
+                            <div class="item-meta">Clinic/Hospital Name • Start Year - Present</div>
+                            <div class="item-desc">Brief description of role and specialties.</div>
+                        </li>
+                        <li>
+                            <div class="item-title">Previous Position</div>
+                            <div class="item-meta">Previous Workplace • Start - End Year</div>
+                            <div class="item-desc">What she accomplished here.</div>
+                        </li>
+                    </ul>
+                </div>
 
-<h2>Uddannelse</h2>
-<ul>
-  <li>Uddannelse – Institution (år)</li>
-</ul>
+                <div class="content-section contact">
+                    <h2>Contact</h2>
+                    <div class="contact-info">
+                        <a href="mailto:email@example.com" class="contact-item">
+                            <svg viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/></svg>
+                            email@example.com
+                        </a>
+                        <a href="tel:+1234567890" class="contact-item">
+                            <svg viewBox="0 0 24 24"><path d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.609-8.994l2.083-1.026-3.493-6.817-2.106 1.039c-7.202 3.755 4.233 25.982 11.6 22.615.121-.055 2.102-1.029 2.11-1.033z"/></svg>
+                            +45 12 34 56 78
+                        </a>
+                        <a href="https://linkedin.com/in/profile" class="contact-item" target="_blank">
+                            <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-<h2>Kontakt</h2>
-<p>Email: xxx@xxx.dk</p>
+            <div class="nav-buttons">
+                <button class="nav-btn active" onclick="showSection('intro')">About</button>
+                <button class="nav-btn" onclick="showSection('education')">Education</button>
+                <button class="nav-btn" onclick="showSection('experience')">Experience</button>
+                <button class="nav-btn" onclick="showSection('contact')">Contact</button>
+            </div>
+        </div>
+    </div>
 
+    <script>
+        function showSection(section) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(s => {
+                s.classList.remove('active');
+            });
+            
+            // Remove active state from all buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.querySelector(`.${section}`).classList.add('active');
+            
+            // Activate clicked button
+            event.target.classList.add('active');
+        }
+    </script>
 </body>
 </html>
