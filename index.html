@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Physiotherapist CV</title>
+    <title>Simone Dideriksen</title>
     <style>
         * {
             margin: 0;
@@ -12,350 +12,227 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            background: linear-gradient(135deg, #89b5af 0%, #5a9d93 100%);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #fafafa;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 40px 20px;
+            color: #1a1a1a;
         }
 
-        .card {
-            max-width: 900px;
+        .container {
+            max-width: 680px;
             width: 100%;
-            height: 500px;
             background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            display: flex;
-            overflow: hidden;
-            animation: fadeIn 0.6s ease;
+            padding: 60px;
+            border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
+        header {
+            margin-bottom: 48px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid #e5e5e5;
         }
 
-        .left-section {
-            width: 40%;
-            background: linear-gradient(135deg, #89b5af 0%, #5a9d93 100%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 40px;
-            color: white;
-        }
-
-        .profile-img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid white;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            margin-bottom: 25px;
-            object-position: center;
-            transform: scale(0.8);
-        }
-
-        .left-section h1 {
-            font-size: 1.8em;
-            margin-bottom: 8px;
-            text-align: center;
-        }
-
-        .left-section p {
-            font-size: 1.1em;
-            opacity: 0.95;
+        h1 {
+            font-size: 2.5em;
             font-weight: 300;
-            text-align: center;
+            letter-spacing: -0.02em;
+            margin-bottom: 8px;
+            color: #1a1a1a;
         }
 
-        .right-section {
-            width: 60%;
-            padding: 50px;
+        .subtitle {
+            font-size: 1.1em;
+            color: #666;
+            font-weight: 400;
+            margin-bottom: 24px;
+        }
+
+        .contact-links {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            position: relative;
+            gap: 24px;
+            flex-wrap: wrap;
         }
 
-        .content-area {
-            flex: 1;
+        .contact-links a {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 0.95em;
             display: flex;
             align-items: center;
-            overflow: hidden;
+            gap: 8px;
+            transition: color 0.2s ease;
+            border-bottom: 1px solid transparent;
+            padding-bottom: 2px;
         }
 
-        .content-section {
-            display: none;
-            animation: slideIn 0.4s ease;
-            width: 100%;
-            max-height: 320px;
-            overflow-y: auto;
-            padding-right: 10px;
-        }
-
-        .content-section::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        .content-section::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 10px;
-        }
-
-        .content-section::-webkit-scrollbar-thumb {
-            background: #89b5af;
-            border-radius: 10px;
-        }
-
-        .content-section::-webkit-scrollbar-thumb:hover {
-            background: #5a9d93;
-        }
-
-        .content-section.active {
-            display: block;
-        }
-
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateX(20px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
-        .intro h2 {
+        .contact-links a:hover {
             color: #5a9d93;
-            font-size: 1.6em;
-            margin-bottom: 20px;
+            border-bottom-color: #5a9d93;
         }
 
-        .intro p {
-            color: #555;
-            line-height: 1.8;
-            font-size: 1.05em;
+        .contact-links svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
         }
 
-        .education-list, .experience-list {
-            list-style: none;
+        section {
+            margin-bottom: 40px;
         }
 
-        .education-list li, .experience-list li {
-            margin-bottom: 25px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
-        }
-
-        .education-list li:last-child, .experience-list li:last-child {
-            border-bottom: none;
+        section:last-child {
             margin-bottom: 0;
         }
 
-        .item-title {
-            color: #333;
-            font-size: 1.2em;
+        h2 {
+            font-size: 0.85em;
             font-weight: 600;
-            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #999;
+            margin-bottom: 24px;
         }
 
-        .item-meta {
-            color: #888;
+        .intro-text {
+            font-size: 1.05em;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .timeline-item {
+            margin-bottom: 32px;
+            padding-left: 20px;
+            border-left: 1px solid #e5e5e5;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-title {
+            font-size: 1.1em;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+
+        .timeline-meta {
             font-size: 0.9em;
+            color: #999;
             margin-bottom: 8px;
         }
 
-        .item-desc {
-            color: #555;
-            line-height: 1.6;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: #555;
-            text-decoration: none;
-            font-size: 1.05em;
-            transition: color 0.3s ease;
-        }
-
-        .contact-item:hover {
-            color: #5a9d93;
-        }
-
-        .contact-item svg {
-            width: 20px;
-            height: 20px;
-            fill: #5a9d93;
-        }
-
-        .nav-buttons {
-            display: flex;
-            gap: 10px;
-            margin-top: 30px;
-        }
-
-        .nav-btn {
-            flex: 1;
-            padding: 12px 20px;
-            background: #f0f0f0;
-            border: none;
-            border-radius: 25px;
-            color: #555;
+        .timeline-desc {
             font-size: 0.95em;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: inherit;
+            line-height: 1.6;
+            color: #555;
         }
 
-        .nav-btn:hover {
-            background: #89b5af;
-            color: white;
-            transform: translateY(-2px);
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 24px;
+            border: 1px solid #e5e5e5;
         }
 
-        .nav-btn.active {
-            background: linear-gradient(135deg, #89b5af 0%, #5a9d93 100%);
-            color: white;
-        }
+        @media (max-width: 640px) {
+            .container {
+                padding: 40px 30px;
+            }
 
-        @media (max-width: 768px) {
-            .card {
+            h1 {
+                font-size: 2em;
+            }
+
+            .contact-links {
                 flex-direction: column;
-                height: auto;
-                max-height: 90vh;
+                gap: 16px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
             }
 
-            .left-section {
-                width: 100%;
-                padding: 30px;
+            .container {
+                box-shadow: none;
+                padding: 40px;
+                max-width: 100%;
             }
 
-            .right-section {
-                width: 100%;
-                padding: 30px;
-            }
-
-            .profile-img {
-                width: 120px;
-                height: 120px;
-            }
-
-            .left-section h1 {
-                font-size: 1.5em;
-            }
-
-            .nav-buttons {
-                flex-wrap: wrap;
+            .contact-links a {
+                color: #1a1a1a;
             }
         }
     </style>
 </head>
 <body>
-    <div class="card">
-        <div class="left-section">
+    <div class="container">
+        <header>
             <img src="https://scontent.fcph3-1.fna.fbcdn.net/v/t1.6435-9/52558988_10213395783029076_572829774066483200_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=6WWip6ds10AQ7kNvwHIp47Z&_nc_oc=AdmV4Zu_MXVXr9cqOp4u7ChWZcyt5FVog8Ds7_McMZEkhSQe2tGPUH_-dLw9uIyf0JI&_nc_zt=23&_nc_ht=scontent.fcph3-1.fna&_nc_gid=wQWWRnjWiU9sf4CIHpjKcg&oh=00_AfrQV9YSUkPO3XE0KUs7J1G8-uW1qh9eVg_SNU8jXrFvAw&oe=697E2FB3" alt="Simone Dideriksen" class="profile-img">
             <h1>Simone Dideriksen</h1>
-            <p>Kombinerer sundhedsfaglig viden med varme</p>
-        </div>
-
-        <div class="right-section">
-            <div class="content-area">
-                <div class="content-section intro active">
-                    <h2>Kort om mig</h2>
-                    <p>
-                        Velkommen! Jeg er en erfaren fysioterapeut med en passion for at skabe gode patientoplevelser. Efter flere år med klinisk arbejde ønsker jeg nu at bringe min sundhedsfaglige viden og menneskelige tilgang ind i en vejlednings- eller receptionsrolle, hvor jeg kan være den første kontakt for patienter og hjælpe med at skabe trygge rammer.
-                    </p>
-                </div>
-
-                <div class="content-section education">
-                    <h2>Uddannelse</h2>
-                    <ul class="education-list">
-                        <li>
-                            <div class="item-title">Professionsbachelor i Fysioterapi</div>
-                            <div class="item-meta">University College Lillebaelt • 2015-2018</div>
-                        </li>
-                        <li>
-                            <div class="item-title">EP Coach og terapeut</div>
-                            <div class="item-meta">Life Academy • 2020-2022</div>
-                        </li>
-                        <li>
-                            <div class="item-title">Den sundhedsfaglige kandidat (80/120 ECTS fuldført)</div>
-                            <div class="item-meta">Syddansk Universitet • 2023-2025</div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="content-section experience">
-                    <h2>Erfaring</h2>
-                    <ul class="experience-list">
-                        <li>
-                            <div class="item-title">Faglig vejleder</div>
-                            <div class="item-meta">SUND, Syddansk Universitet • Aug 2024 - Dec 2024</div>
-                            <div class="item-desc">Faglig vejledning af studerende på SUND både ift. regelvejledning omkring studieordningernes regler. Håndtere studerende med behov for ekstra hjælp og sørge for at de kommer i kontakt med dem der kan hjælpe dem videre. Planlægge og deltage i vejlednings- og informationsarrangementer. Vejlede potentielle ansøgere til uddannelserne.</div>
-                        </li>
-                        <li>
-                            <div class="item-title">Beskæftigelsesrettet fysioterapeut</div>
-                            <div class="item-meta">Jan 2021 - Dec 2022</div>
-                            <div class="item-desc">Beskæftigelsesorienteret fysioterapi, hvor vores fokus er at hjælpe individet med at genetablere sig selv på arbejdsmarkedet via. bl.a. jobafklarende samtaler, træning af fysiske udfordringer, kompetenceafklaring, undervisning i håndtering af stress, angst, smerter m.fl.</div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="content-section contact">
-                    <h2>Kontakt</h2>
-                    <div class="contact-info">
-                        <a href="mailto:simoned94@live.dk" class="contact-item">
-                            <svg viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/></svg>
-                            simoned94@live.dk
-                        </a>
-                        <a href="tel:+4512345678" class="contact-item">
-                            <svg viewBox="0 0 24 24"><path d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.609-8.994l2.083-1.026-3.493-6.817-2.106 1.039c-7.202 3.755 4.233 25.982 11.6 22.615.121-.055 2.102-1.029 2.11-1.033z"/></svg>
-                            +45 12 34 56 78
-                        </a>
-                        <a href="https://www.linkedin.com/in/simone-dideriksen-97599510b/" class="contact-item" target="_blank">
-                            <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                            LinkedIn
-                        </a>
-                    </div>
-                </div>
+            <p class="subtitle">Fysioterapeut · Vejleder</p>
+            <div class="contact-links">
+                <a href="mailto:simoned94@live.dk">
+                    <svg viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/></svg>
+                    simoned94@live.dk
+                </a>
+                <a href="tel:+4512345678">
+                    <svg viewBox="0 0 24 24"><path d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.609-8.994l2.083-1.026-3.493-6.817-2.106 1.039c-7.202 3.755 4.233 25.982 11.6 22.615.121-.055 2.102-1.029 2.11-1.033z"/></svg>
+                    +45 12 34 56 78
+                </a>
+                <a href="https://www.linkedin.com/in/simone-dideriksen-97599510b/" target="_blank">
+                    <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    LinkedIn
+                </a>
             </div>
+        </header>
 
-            <div class="nav-buttons">
-                <button class="nav-btn active" onclick="showSection('intro')">Om</button>
-                <button class="nav-btn" onclick="showSection('education')">Uddannelse</button>
-                <button class="nav-btn" onclick="showSection('experience')">Erfaring</button>
-                <button class="nav-btn" onclick="showSection('contact')">Kontakt</button>
+        <section>
+            <h2>Om</h2>
+            <p class="intro-text">
+                Erfaren fysioterapeut med passion for at skabe gode patientoplevelser. Efter flere år med klinisk arbejde ønsker jeg nu at bringe min sundhedsfaglige viden og menneskelige tilgang ind i en vejlednings- eller receptionsrolle, hvor jeg kan være den første kontakt for patienter og hjælpe med at skabe trygge rammer.
+            </p>
+        </section>
+
+        <section>
+            <h2>Erfaring</h2>
+            <div class="timeline-item">
+                <div class="timeline-title">Faglig vejleder</div>
+                <div class="timeline-meta">SUND, Syddansk Universitet · Aug 2024 - Dec 2024</div>
+                <div class="timeline-desc">Faglig vejledning af studerende på SUND, regelvejledning omkring studieordninger, håndtering af studerende med behov for ekstra hjælp, planlægning af vejlednings- og informationsarrangementer.</div>
             </div>
-        </div>
+            <div class="timeline-item">
+                <div class="timeline-title">Beskæftigelsesrettet fysioterapeut</div>
+                <div class="timeline-meta">Jan 2021 - Dec 2022</div>
+                <div class="timeline-desc">Beskæftigelsesorienteret fysioterapi med fokus på at hjælpe individer tilbage på arbejdsmarkedet via jobafklarende samtaler, træning, kompetenceafklaring og undervisning i håndtering af stress, angst og smerter.</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Uddannelse</h2>
+            <div class="timeline-item">
+                <div class="timeline-title">Den sundhedsfaglige kandidat</div>
+                <div class="timeline-meta">Syddansk Universitet · 2023-2025 · 80/120 ECTS fuldført</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-title">EP Coach og terapeut</div>
+                <div class="timeline-meta">Life Academy · 2020-2022</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-title">Professionsbachelor i Fysioterapi</div>
+                <div class="timeline-meta">University College Lillebaelt · 2015-2018</div>
+            </div>
+        </section>
     </div>
-
-    <script>
-        function showSection(section) {
-            // Hide all sections
-            document.querySelectorAll('.content-section').forEach(s => {
-                s.classList.remove('active');
-            });
-            
-            // Remove active state from all buttons
-            document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            
-            // Show selected section
-            document.querySelector(`.${section}`).classList.add('active');
-            
-            // Activate clicked button
-            event.target.classList.add('active');
-        }
-    </script>
 </body>
 </html>
